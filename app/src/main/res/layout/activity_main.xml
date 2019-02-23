@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#555555"
+    tools:context=".MainActivity">
+
+
+
+
+
+
+
+    <TextView
+        android:text="@string/x"
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#008FFF"
+        android:id="@+id/x"
+        android:layout_alignEnd="@+id/y" />
+
+    <TextView
+        android:text="@string/y"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/y"
+        android:textColor="#FF0000"
+        android:layout_below="@+id/x"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:text="@string/z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:id="@+id/z"
+        android:textColor="#07FF13"
+        android:layout_below="@+id/y"
+        android:layout_alignEnd="@+id/y" />
+
+    <TextView
+        android:text="@string/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFE600"
+        android:id="@+id/location1"
+        android:layout_below="@+id/z"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/thre"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/location1"
+        android:text="@string/threshold"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/editThres"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location1"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:inputType="numberDecimal"
+        android:layout_marginStart="101dp" />
+
+    <Button
+        android:id="@+id/setButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location1"
+        android:layout_alignBottom="@+id/editThres"
+        android:layout_marginBottom="-3dp"
+        android:layout_toEndOf="@+id/editThres"
+        android:onClick="savethres"
+        android:text="@string/set"/>
+
+
+
+    <Button
+        android:id="@+id/delButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="165dp"
+        android:onClick="delfile"
+        android:text="@string/delete_database"
+        android:textAllCaps="false" />
+
+
+
+    <Button
+        android:id="@+id/readData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/delButt"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:text="@string/read_database"
+        android:onClick="readfile"
+        android:textAllCaps="false" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3A3A3A"
+
+        android:isScrollContainer="false"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <TextView
+                android:id="@+id/data"
+                android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:layout_height="match_parent"
+                android:textColor="#FFFFFF"
+                android:text="@string/info" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MAP"
+        android:onClick="showMap"
+        android:layout_alignBaseline="@id/delButt"
+        android:layout_centerHorizontal="true"
+
+        />
+
+</RelativeLayout>

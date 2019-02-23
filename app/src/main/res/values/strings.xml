@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Pothole Detector</string>
+    <string name="hey_you_droped_me_bitch">HEY ! You dropped me. Buddy !</string>
+    <string name="am_i_safe">Am I safe !</string>
+    <string name="z">z=</string>
+    <string name="location">Location</string>
+    <string name="y">y=</string>
+    <string name="x">x=</string>
+    <string name="info">
+        "Information : \n
+        This app is used to detect potholes and creates a database for later uses.\n\n
+        >>>How to use :-\n
+        1. Adjust the value of therhold in the EditText (Default 15 m/s.s), suitable values for varios Vehicles are as follows :-\n
+            "BIKE       --->       ~11.5"\n
+            "CAR(small) ---> 11.5 ~ 11.0"\n
+            "CAR(big)   ---> 11.1 ~ 10.5"\n
+            "BUS        --->       ~10.5"\n
+
+        ** Threshold basically depends upon the diameter of the wheel of the Vehicle.\n\n
+        2. Place the device in such a manner so that it's Screen is parallel to the road.\n\n
+
+        3. The Device will detect potholes with their location. \n"
+    </string>
+    <string name="delete_database">Delete Database</string>
+    <string name="read_database">Read DataBase</string>
+    <string name="db_deletion"><![CDATA[<<<<<<<<DATABASE  DELETED>>>>>>>]]></string>
+    <string name="threshold">Threshold :</string>
+    <string name="set">SET</string>
+    <string name="title_activity_splash">splash</string>
+    <string name="title_activity_layout">layout</string>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>
