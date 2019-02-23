@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#919191"
+    tools:context=".Drop">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hey_you_droped_me_bitch"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:textSize="40sp"/>
+    <Button
+        android:id="@+id/safeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/am_i_safe"
+        android:textAllCaps="false"
+        android:onClick="safe"
+        android:textSize="30sp"
+        />
+</RelativeLayout>

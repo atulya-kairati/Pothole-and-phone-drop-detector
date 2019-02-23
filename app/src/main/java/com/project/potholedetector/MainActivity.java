@@ -1,6 +1,7 @@
 package com.project.potholedetector;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -9,11 +10,14 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -126,7 +130,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         z.setText("z= " + event.values[2]);
 
         //Makin an obj of SmsHandler class And FileHandler class
-
+        SmsHandler sh = new SmsHandler();
+        FileHandler fh = new FileHandler();
 
 
         //This is done to prevent multiple values above threshold being registered as multiple potholes
@@ -136,7 +141,30 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 lastUpdate = actualTime;
                 if (event.values[2] > threshold) {
                     Toast.makeText(getApplicationContext(), "Pothole Detected", Toast.LENGTH_SHORT).show();
+                    fh.saveFile(current);//Saving potholes in txt database.
 
+
+                    ///////////////////////////////////////////////
+
+
+
+
+
+
+                    ///////////////////////////////////////////
+                } else if (Math.abs(event.values[2]) < 1 && Math.abs(event.values[1]) < 1 && Math.abs(event.values[0]) < 1) {
+
+
+
+                    Intent drop;
+                    drop = new Intent(this, Drop.class);
+
+                    //>>calling send method from Sms handler  class
+
+                    drop.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(drop);
+
+                    sh.send(current);
 
                 }
             }
@@ -151,6 +179,34 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 //#########################################################################################################################################
 
+    public void readfile(View v){
+
+        FileHandler fh = new FileHandler();
+        TextView dat = findViewById(R.id.data);
+        String db = fh.read();
+        dat.setText(db);
 
 
-}
+    }
+    public void delfile(View v){
+
+        FileHandler fh = new FileHandler();
+        TextView dat = findViewById(R.id.data);
+        fh.delData();
+        dat.setText(getString(R.string.db_deletion)+"\n\n"+getString(R.string.info));
+
+    }
+
+    public  void savethres(View v){
+
+        EditText setthres =findViewById(R.id.editThres);
+        threshold = Double.parseDouble(setthres.getText().toString());
+
+    }
+
+
+    }
+
+
+
+
