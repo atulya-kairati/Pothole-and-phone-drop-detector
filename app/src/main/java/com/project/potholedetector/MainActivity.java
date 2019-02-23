@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     Toast.makeText(getApplicationContext(), "Pothole Detected", Toast.LENGTH_SHORT).show();
                     fh.saveFile(current);//Saving potholes in txt database.
 
-
+                    final MediaPlayer scream = MediaPlayer.create(this, R.raw.beep);
+                    scream.start();
                     ///////////////////////////////////////////////
 
 
@@ -158,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                     Intent drop;
                     drop = new Intent(this, Drop.class);
-
+                    final MediaPlayer scream = MediaPlayer.create(this, R.raw.scream);
+                    scream.start();
                     //>>calling send method from Sms handler  class
 
                     drop.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -205,8 +207,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
-    }
 
 
 
 
+}
