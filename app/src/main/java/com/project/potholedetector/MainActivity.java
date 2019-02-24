@@ -3,6 +3,9 @@ package com.project.potholedetector;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,6 +23,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.maps.GoogleMap;
 
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
@@ -206,7 +211,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     }
 
+    public  void showMap(View view){
+        Intent mi = new Intent(this, MapsActivity.class);
+        startActivity(mi);
+    }
 
+    public Location getLoc(){
+
+
+        return current;
+    }
 
 
 
